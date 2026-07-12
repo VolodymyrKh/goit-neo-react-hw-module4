@@ -1,18 +1,44 @@
-# React + Vite
+# Image Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Keyword-based image search app powered by the [Unsplash API](https://unsplash.com/documentation).
+Built with React + Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Image search by keyword
+- Pagination via the **Load more** button
+- Loading indicator (`react-spinners`)
+- Notifications (`react-hot-toast`)
+- Modal window with a large image and author info (`react-modal`),
+  closes on `ESC` and backdrop click
+- HTTP request error handling
 
-## React Compiler
+## Tech stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+React 19, Vite, axios, react-hot-toast, react-modal, react-spinners, react-icons, CSS Modules.
 
-Note: This will impact Vite dev & build performances.
+## Running locally
 
-## Expanding the ESLint configuration
+1. Install dependencies:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+   ```bash
+   npm install
+   ```
+
+2. Create a `.env` file in the project root (see `.env.example`) and add your
+   Access Key from [Unsplash](https://unsplash.com/oauth/applications):
+
+   ```
+   VITE_UNSPLASH_ACCESS_KEY=your_unsplash_access_key_here
+   ```
+
+3. Start the app:
+
+   ```bash
+   npm run dev
+   ```
+
+## Deploying to Vercel
+
+Don't forget to add the `VITE_UNSPLASH_ACCESS_KEY` environment variable
+in your Vercel project settings (**Settings → Environment Variables**).
